@@ -24,8 +24,6 @@ public class SeleniumProject {
 
 	public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		// Code for removing push notification:
-				//Create a class to handle external elements.  (Alerts)
 				
 		ChromeOptions options = new ChromeOptions();
 				
@@ -55,49 +53,29 @@ public class SeleniumProject {
 		ps.setString(1,title);
 		ps.setString(2,url);
 		ps.executeUpdate();
-
-		// Updated code -> SONAL MITTAL
-
-				// Clear the source text box
 				
 		driver.findElement(By.xpath("//div[@class='main-wrapper search-box-wrapper']/descendant::input[1]")).clear();
-			
-			// enter input string in text box
 				
 		driver.findElement(By.xpath("//div[@class='main-wrapper search-box-wrapper']/descendant::input[1]")).sendKeys("Chennai");
 						
 		Thread.sleep(2000);
-						// capture element form the list
-		//driver.findElement(By.xpath("//div[@class='autoFill autosuggest-ul rdc-src']/descendant::li[3]")).click();
-						
-						// destination
+
 		driver.findElement(By.xpath("//div[@class='main-wrapper search-box-wrapper']/descendant::input[2]")).clear();
 				
 		driver.findElement(By.xpath("//div[@class='main-wrapper search-box-wrapper']/descendant::input[2]")).sendKeys("Mumbai");
 					
 		Thread.sleep(2000);
 				
-		//driver.findElement(By.xpath("//div[@class='autoFill autosuggest-ul rdc-dest']/descendant::li[3]")).click();
-					
-				//calander
-				
-		Thread.sleep(3000);
-				
 		driver.findElement(By.id("date-box")).click();
 				
 		Thread.sleep(5000);
 				
-				//Select date
-				
 		driver.findElement(By.xpath("//div[@class='DatePicker__CalendarContainer-sc-1x9sb82-0 bkhtIz']/descendant::span[41]")).click();
 				
 		Thread.sleep(5000);	
-						   
-						   //click on search button
+		
 		driver.findElement(By.id("search_butn")).click();
 
-				
-				// Upload file using autoIT
 		driver.navigate().to("https://www.remove.bg/");
 		driver.get("https://www.remove.bg/");
 		
@@ -107,7 +85,7 @@ public class SeleniumProject {
 		
 		url = driver.getCurrentUrl();
 		
-		ps = con.prepareStatement("insert into webtabs values(?,?)"); // execute query
+		ps = con.prepareStatement("insert into webtabs values(?,?)"); 
 		ps.setString(1,title);
 		ps.setString(2,url);
 		ps.executeUpdate();
@@ -131,7 +109,7 @@ public class SeleniumProject {
 		
 		url = driver.getCurrentUrl();
 		
-		ps = con.prepareStatement("insert into webtabs values(?,?)"); // execute query
+		ps = con.prepareStatement("insert into webtabs values(?,?)"); 
 		ps.setString(1,title);
 		ps.setString(2,url);
 		ps.executeUpdate();
